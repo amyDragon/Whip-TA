@@ -10,10 +10,37 @@ import Foundation
 
 class Globals {
     
+    public static var jobsData    : JobModel.Job?
+    public static var ratingsData : RatingsModel.Rating?
+    public static var serviceData : ServiceModel.Service?
+    
+    public static var piechartData = [PieChartsModel.PieChart]()
+    public static var scope        = "ALL"
+    
+    static func getAnalytics(scope: String, completion: @escaping (Bool)->()) {
+        var success = false
+        AnalyticsModel.getAnalytics(scope:scope) { (result) in
+            guard let result = result else {
+                print("error getting result")
+                completion(success)
+                return
+            }
+            DispatchQueue.main.async {
+                if let data = result.response.data {
+                    self.jobsData       = data.analytics.job
+                    self.piechartData   = data.analytics.pieCharts
+                    self.ratingsData    = data.analytics.rating
+                    self.serviceData    = data.analytics.service
+                }
+            }
+            success = true
+            completion(success)
+        }
+    }
+    
     static func getData<T: Decodable>(url: String, for type: T.Type, _ completion: ((T?) -> ())? = nil){
         guard let dataUrl = URL(string: url) else {
             print("incorrect url \(url)")
-            //TODO:: replace with alert
             return;
         }
         
@@ -21,7 +48,6 @@ class Globals {
         let task = session.dataTask(with: dataUrl) { data, response, error in
             
             guard error == nil, let data = data else {
-                //TODO::remove prints
                 print("error \(String(describing: error)), data issue")
                 return
             }

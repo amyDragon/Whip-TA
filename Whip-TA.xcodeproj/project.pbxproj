@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		305658264B4BBF923D8D72E9 /* Pods_Whip_TA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C16FBE3F5F62CA08F1BA41 /* Pods_Whip_TA.framework */; };
+		E1417CEC2466F5B000FD72CB /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1417CEB2466F5B000FD72CB /* TabbarViewController.swift */; };
+		E1417CEE2467088200FD72CB /* PieChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1417CED2467088200FD72CB /* PieChartCollectionViewCell.swift */; };
 		E1CD5EAB24668824008AFD4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD5EAA24668824008AFD4B /* AppDelegate.swift */; };
 		E1CD5EAD24668824008AFD4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD5EAC24668824008AFD4B /* SceneDelegate.swift */; };
-		E1CD5EAF24668824008AFD4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD5EAE24668824008AFD4B /* ViewController.swift */; };
+		E1CD5EAF24668824008AFD4B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD5EAE24668824008AFD4B /* DashboardViewController.swift */; };
 		E1CD5EB224668824008AFD4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1CD5EB024668824008AFD4B /* Main.storyboard */; };
 		E1CD5EB42466882A008AFD4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1CD5EB32466882A008AFD4B /* Assets.xcassets */; };
 		E1CD5EB72466882A008AFD4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1CD5EB52466882A008AFD4B /* LaunchScreen.storyboard */; };
@@ -22,10 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D0CAE9CCBB1505FAD286F19 /* Pods-Whip-TA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whip-TA.release.xcconfig"; path = "Target Support Files/Pods-Whip-TA/Pods-Whip-TA.release.xcconfig"; sourceTree = "<group>"; };
+		A6C16FBE3F5F62CA08F1BA41 /* Pods_Whip_TA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whip_TA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1417CEB2466F5B000FD72CB /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		E1417CED2467088200FD72CB /* PieChartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1CD5EA724668824008AFD4B /* Whip-TA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whip-TA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CD5EAA24668824008AFD4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1CD5EAC24668824008AFD4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E1CD5EAE24668824008AFD4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1CD5EAE24668824008AFD4B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		E1CD5EB124668824008AFD4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1CD5EB32466882A008AFD4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1CD5EB62466882A008AFD4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		E1CD5EC8246694E3008AFD4B /* RatingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsModel.swift; sourceTree = "<group>"; };
 		E1CD5ECA246694F1008AFD4B /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		E1CD5ECC24669FD7008AFD4B /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		EDA02DC56F44968EEC11C339 /* Pods-Whip-TA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whip-TA.debug.xcconfig"; path = "Target Support Files/Pods-Whip-TA/Pods-Whip-TA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305658264B4BBF923D8D72E9 /* Pods_Whip_TA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		394C83A40575483EF05E29B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6C16FBE3F5F62CA08F1BA41 /* Pods_Whip_TA.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E1CD5E9E24668824008AFD4B = {
 			isa = PBXGroup;
 			children = (
 				E1CD5EA924668824008AFD4B /* Whip-TA */,
 				E1CD5EA824668824008AFD4B /* Products */,
+				FC68D33121DECCA7AD9B1A73 /* Pods */,
+				394C83A40575483EF05E29B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,11 +91,10 @@
 				E1CD5EBE24668981008AFD4B /* Model */,
 				E1CD5EBF24668989008AFD4B /* ViewControllers */,
 				E1CD5EC024668993008AFD4B /* Views */,
+				E1CD5ECE2466C855008AFD4B /* Storyboards */,
 				E1CD5EAA24668824008AFD4B /* AppDelegate.swift */,
 				E1CD5EAC24668824008AFD4B /* SceneDelegate.swift */,
-				E1CD5EB024668824008AFD4B /* Main.storyboard */,
 				E1CD5EB32466882A008AFD4B /* Assets.xcassets */,
-				E1CD5EB52466882A008AFD4B /* LaunchScreen.storyboard */,
 				E1CD5EB82466882A008AFD4B /* Info.plist */,
 			);
 			path = "Whip-TA";
@@ -97,7 +115,8 @@
 		E1CD5EBF24668989008AFD4B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E1CD5EAE24668824008AFD4B /* ViewController.swift */,
+				E1CD5EAE24668824008AFD4B /* DashboardViewController.swift */,
+				E1417CEB2466F5B000FD72CB /* TabbarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -105,6 +124,7 @@
 		E1CD5EC024668993008AFD4B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1417CED2467088200FD72CB /* PieChartCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +137,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		E1CD5ECE2466C855008AFD4B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E1CD5EB52466882A008AFD4B /* LaunchScreen.storyboard */,
+				E1CD5EB024668824008AFD4B /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FC68D33121DECCA7AD9B1A73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDA02DC56F44968EEC11C339 /* Pods-Whip-TA.debug.xcconfig */,
+				0D0CAE9CCBB1505FAD286F19 /* Pods-Whip-TA.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1CD5EBB2466882A008AFD4B /* Build configuration list for PBXNativeTarget "Whip-TA" */;
 			buildPhases = (
+				BB16395FB222DFD8728886E2 /* [CP] Check Pods Manifest.lock */,
 				E1CD5EA324668824008AFD4B /* Sources */,
 				E1CD5EA424668824008AFD4B /* Frameworks */,
 				E1CD5EA524668824008AFD4B /* Resources */,
+				73CECF7794368AE0D45DB391 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +223,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		73CECF7794368AE0D45DB391 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whip-TA/Pods-Whip-TA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Whip-TA/Pods-Whip-TA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Whip-TA/Pods-Whip-TA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB16395FB222DFD8728886E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Whip-TA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1CD5EA324668824008AFD4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -190,12 +272,14 @@
 			files = (
 				E1CD5EC9246694E3008AFD4B /* RatingsModel.swift in Sources */,
 				E1CD5EC324668A6A008AFD4B /* AnalyticsModel.swift in Sources */,
-				E1CD5EAF24668824008AFD4B /* ViewController.swift in Sources */,
+				E1417CEE2467088200FD72CB /* PieChartCollectionViewCell.swift in Sources */,
+				E1CD5EAF24668824008AFD4B /* DashboardViewController.swift in Sources */,
 				E1CD5EAB24668824008AFD4B /* AppDelegate.swift in Sources */,
 				E1CD5EC7246694CB008AFD4B /* PieChartsModel.swift in Sources */,
 				E1CD5EAD24668824008AFD4B /* SceneDelegate.swift in Sources */,
 				E1CD5EC524669351008AFD4B /* JobModel.swift in Sources */,
 				E1CD5ECB246694F1008AFD4B /* ServiceModel.swift in Sources */,
+				E1417CEC2466F5B000FD72CB /* TabbarViewController.swift in Sources */,
 				E1CD5ECD24669FD7008AFD4B /* Globals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +422,7 @@
 		};
 		E1CD5EBC2466882A008AFD4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDA02DC56F44968EEC11C339 /* Pods-Whip-TA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -356,6 +441,7 @@
 		};
 		E1CD5EBD2466882A008AFD4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0CAE9CCBB1505FAD286F19 /* Pods-Whip-TA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
