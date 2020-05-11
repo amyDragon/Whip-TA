@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		305658264B4BBF923D8D72E9 /* Pods_Whip_TA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C16FBE3F5F62CA08F1BA41 /* Pods_Whip_TA.framework */; };
+		E13A31CB2469E11E001AB121 /* DashboardChartsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A31CA2469E11E001AB121 /* DashboardChartsExtension.swift */; };
 		E1417CEC2466F5B000FD72CB /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1417CEB2466F5B000FD72CB /* TabbarViewController.swift */; };
 		E1417CEE2467088200FD72CB /* PieChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1417CED2467088200FD72CB /* PieChartCollectionViewCell.swift */; };
+		E146A7D4246991EE008566E0 /* LineChartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E146A7D3246991EE008566E0 /* LineChartsModel.swift */; };
+		E160F2C524687E6F006DD9D9 /* JobsServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E160F2C424687E6F006DD9D9 /* JobsServicesViewController.swift */; };
+		E160F2C72468852D006DD9D9 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E160F2C62468852D006DD9D9 /* ItemTableViewCell.swift */; };
 		E1CD5EAB24668824008AFD4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD5EAA24668824008AFD4B /* AppDelegate.swift */; };
 		E1CD5EAD24668824008AFD4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD5EAC24668824008AFD4B /* SceneDelegate.swift */; };
 		E1CD5EAF24668824008AFD4B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CD5EAE24668824008AFD4B /* DashboardViewController.swift */; };
@@ -27,8 +31,12 @@
 /* Begin PBXFileReference section */
 		0D0CAE9CCBB1505FAD286F19 /* Pods-Whip-TA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whip-TA.release.xcconfig"; path = "Target Support Files/Pods-Whip-TA/Pods-Whip-TA.release.xcconfig"; sourceTree = "<group>"; };
 		A6C16FBE3F5F62CA08F1BA41 /* Pods_Whip_TA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whip_TA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E13A31CA2469E11E001AB121 /* DashboardChartsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChartsExtension.swift; sourceTree = "<group>"; };
 		E1417CEB2466F5B000FD72CB /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		E1417CED2467088200FD72CB /* PieChartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCollectionViewCell.swift; sourceTree = "<group>"; };
+		E146A7D3246991EE008566E0 /* LineChartsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartsModel.swift; sourceTree = "<group>"; };
+		E160F2C424687E6F006DD9D9 /* JobsServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsServicesViewController.swift; sourceTree = "<group>"; };
+		E160F2C62468852D006DD9D9 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		E1CD5EA724668824008AFD4B /* Whip-TA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whip-TA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CD5EAA24668824008AFD4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1CD5EAC24668824008AFD4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 				E1CD5EC6246694CB008AFD4B /* PieChartsModel.swift */,
 				E1CD5EC8246694E3008AFD4B /* RatingsModel.swift */,
 				E1CD5ECA246694F1008AFD4B /* ServiceModel.swift */,
+				E146A7D3246991EE008566E0 /* LineChartsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,7 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				E1CD5EAE24668824008AFD4B /* DashboardViewController.swift */,
+				E13A31CA2469E11E001AB121 /* DashboardChartsExtension.swift */,
 				E1417CEB2466F5B000FD72CB /* TabbarViewController.swift */,
+				E160F2C424687E6F006DD9D9 /* JobsServicesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -125,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E1417CED2467088200FD72CB /* PieChartCollectionViewCell.swift */,
+				E160F2C62468852D006DD9D9 /* ItemTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,16 +282,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E146A7D4246991EE008566E0 /* LineChartsModel.swift in Sources */,
+				E160F2C524687E6F006DD9D9 /* JobsServicesViewController.swift in Sources */,
 				E1CD5EC9246694E3008AFD4B /* RatingsModel.swift in Sources */,
 				E1CD5EC324668A6A008AFD4B /* AnalyticsModel.swift in Sources */,
 				E1417CEE2467088200FD72CB /* PieChartCollectionViewCell.swift in Sources */,
 				E1CD5EAF24668824008AFD4B /* DashboardViewController.swift in Sources */,
 				E1CD5EAB24668824008AFD4B /* AppDelegate.swift in Sources */,
+				E160F2C72468852D006DD9D9 /* ItemTableViewCell.swift in Sources */,
 				E1CD5EC7246694CB008AFD4B /* PieChartsModel.swift in Sources */,
 				E1CD5EAD24668824008AFD4B /* SceneDelegate.swift in Sources */,
 				E1CD5EC524669351008AFD4B /* JobModel.swift in Sources */,
 				E1CD5ECB246694F1008AFD4B /* ServiceModel.swift in Sources */,
 				E1417CEC2466F5B000FD72CB /* TabbarViewController.swift in Sources */,
+				E13A31CB2469E11E001AB121 /* DashboardChartsExtension.swift in Sources */,
 				E1CD5ECD24669FD7008AFD4B /* Globals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

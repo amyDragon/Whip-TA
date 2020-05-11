@@ -20,18 +20,26 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var pickerContainerView: UIView!
     @IBOutlet weak var pickerView: UIPickerView!
     
-    fileprivate let colors              = [ #colorLiteral(red: 0.2392156863, green: 0.6745098039, blue: 0.968627451, alpha: 1), #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1) ]
     fileprivate var rating              = 0
     fileprivate var selectedScope       = ""
-    fileprivate var scopeList           = ["ALL", "TODAY", "LAST_7_DAYS", "LAST_30_DAYS"]
+    fileprivate var showLineChart       = false //intented to choose between displaying the lineChart and piechart
     
-    fileprivate var chartData  : PieChartData?
+    //scopeOptions enum in order to display options to the user in a more appropriate format
+    enum scopeOptions: String {
+        case ALL = "All", TODAY = "Today", LAST_7_DAYS = "Last 7 days", LAST_30_DAYS = "Last 30 days"
+        static let scopeList = [ALL, TODAY, LAST_7_DAYS, LAST_30_DAYS]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         chartCollectionView.delegate = self
         chartCollectionView.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         getAnalytics()
     }
     
@@ -51,16 +59,18 @@ class DashboardViewController: UIViewController {
     
     func setupGUI() {
         scopeLabel.text = Globals.scope
+        pageControl.numberOfPages = Globals.piechartData.count
+        
         if let ratings = Globals.ratingsData {
             ratingTitle.text       = ratings.title
             ratingDescription.text = ratings.description
             
+            //Visually displaying the rating
             for subview in ratingStackView.subviews { subview.removeFromSuperview() }
             for i in 1...5 {
                 ratingStackView.addArrangedSubview(getRating(index: i, average: ratings.avg))
             }
         }
-        pageControl.numberOfPages = Globals.piechartData.count
     }
     
     func getRating(index: Int, average: Int) -> UIView {
@@ -84,40 +94,21 @@ class DashboardViewController: UIViewController {
         dismissPickerView()
     }
     
-    // MARK : chart functions
-    private func setPieChartData(index: Int) -> PieChartData{
-        var keys   = [String]()
-        var values = [Double]()
-        let chartArray : [PieChartsModel.Items] = Globals.piechartData[index].items
-        
-        for item in chartArray {
-            keys.append(item.key)
-            values.append(item.value)
+    // MARK : chart functions in a separate extension swift file
+    //Segment control intented to switch between Linechart and Piechart
+    //Not used due to some errors
+    @IBAction func onPressSegmentControl(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            showLineChart = false
+            pageControl.numberOfPages = Globals.piechartData.count
+        case 1:
+            showLineChart = true
+            pageControl.numberOfPages = Globals.linechartData.count
+        default:
+            break
         }
-        let data = self.customizeChart(dataPoints: keys, values: values.map{ Double($0) })
-        return data
-    }
-    
-    func customizeChart(dataPoints: [String], values: [Double]) -> PieChartData {
-        //Set ChartDataEntry
-        var dataEntries: [ChartDataEntry] = []
-        for i in 0..<dataPoints.count {
-            let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
-            dataEntries.append(dataEntry)
-        }
-        
-        //Set ChartDataSet
-        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
-        pieChartDataSet.entryLabelColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        pieChartDataSet.colors = colors
-        
-        //Set ChartData
-        let pieChartData = PieChartData(dataSet: pieChartDataSet)
-        let format = NumberFormatter()
-        format.numberStyle = .none
-        let formatter = DefaultValueFormatter(formatter: format)
-        pieChartData.setValueFormatter(formatter)
-        return pieChartData
+        chartCollectionView.reloadData()
     }
 }
 
@@ -131,7 +122,7 @@ extension DashboardViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     func dismissPickerView() {
         pickerContainerView.isHidden = true
         Globals.scope = selectedScope
-        getAnalytics()
+        getAnalytics() //refresh page data based on scope selected
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -139,17 +130,17 @@ extension DashboardViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return scopeList.count
+        return scopeOptions.scopeList.count
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = scopeList[row]
+        let titleData = scopeOptions.scopeList[row].rawValue
         let title = NSAttributedString(string: titleData, attributes: [.foregroundColor:#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)])
         return title
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedScope = scopeList[row]
+        selectedScope = String(describing: scopeOptions.scopeList[row])
     }
 }
 
@@ -161,7 +152,8 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Globals.piechartData.count
+        let count = showLineChart ? Globals.linechartData.count : Globals.piechartData.count
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -170,9 +162,14 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.chartTitle.text = Globals.piechartData[indexPath.row].title
         cell.chartDescription.text = Globals.piechartData[indexPath.row].description
         
-        chartData = setPieChartData(index: indexPath.row)
-        if let data = chartData {
-            cell.piechartView.data = data
+        cell.piechartView.isHidden  = showLineChart ? true : false
+        cell.lineChartView.isHidden = showLineChart ? false : true
+        if showLineChart {
+            cell.lineChartView.data = setLineChartData(index: indexPath.row)
+        }
+        else {
+            cell.piechartView.data = setPieChartData(index: indexPath.row)
+            cell.piechartView.holeColor = .clear
         }
         return cell
     }

@@ -10,11 +10,20 @@ import Foundation
 
 class AnalyticsModel {
     
+    public struct Items : Decodable {
+        var avg         : String?
+        var description : String
+        var growth      : Int
+        var title       : String
+        var total       : Int?
+    }
+    
     public struct Analytics : Decodable {
-        var job       : JobModel.Job
-        var pieCharts : [PieChartsModel.PieChart]
-        var rating    : RatingsModel.Rating
-        var service   : ServiceModel.Service
+        var job         : JobModel.Job
+        var lineCharts  : [[LineChartsModel.LineChart]]
+        var pieCharts   : [PieChartsModel.PieChart]
+        var rating      : RatingsModel.Rating
+        var service     : ServiceModel.Service
     }
     
     public struct Data : Decodable {

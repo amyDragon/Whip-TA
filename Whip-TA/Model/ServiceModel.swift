@@ -10,17 +10,9 @@ import Foundation
 
 class ServiceModel {
     
-    public struct Items : Decodable {
-        var avg         : String?
-        var description : String
-        var growth      : Int
-        var title       : String
-        var total       : Int?
-    }
-    
     public struct Service : Decodable {
         var description : String
-        var items       : [Items]
+        var items       : [AnalyticsModel.Items]
         var title       : String
     }
 }

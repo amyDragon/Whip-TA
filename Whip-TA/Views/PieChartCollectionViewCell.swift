@@ -11,6 +11,7 @@ import Charts
 
 class PieChartCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var piechartView: PieChartView!
     @IBOutlet weak var chartTitle: UILabel!
     @IBOutlet weak var chartDescription: UILabel!
