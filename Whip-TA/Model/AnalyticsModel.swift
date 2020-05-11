@@ -20,7 +20,7 @@ class AnalyticsModel {
     
     public struct Analytics : Decodable {
         var job         : JobModel.Job
-        var lineCharts  : [[LineChartsModel.LineChart]]
+        var lineCharts  : [[LineChartsModel.LineChart]]?
         var pieCharts   : [PieChartsModel.PieChart]
         var rating      : RatingsModel.Rating
         var service     : ServiceModel.Service

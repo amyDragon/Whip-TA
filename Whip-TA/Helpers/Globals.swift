@@ -34,7 +34,10 @@ class Globals {
                     self.piechartData   = data.analytics.pieCharts
                     self.ratingsData    = data.analytics.rating
                     self.serviceData    = data.analytics.service
-                    self.linechartData  = data.analytics.lineCharts
+                    
+                    if let lineChartData = data.analytics.lineCharts {
+                        self.linechartData  = lineChartData
+                    }
                 }
             }
             success = true
